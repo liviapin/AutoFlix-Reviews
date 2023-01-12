@@ -1,0 +1,61 @@
+.background {
+  background-color: #5e6164;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.texto
+{
+  color:#f0f0f0;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  justify-content:first baseline;
+  padding: 30px;
+}
+
+.texto2 {
+  font-weight: 400;
+  font-size: 20px;
+  padding-left: 3%;
+}
+
+
+.flex-container{
+  flex-wrap: wrap;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 30px;
+
+}
+
+.foto {
+  display: flex;
+  height: 300px;
+}
+
+.tamanho {
+  height: 250px;
+}
+
+.apresentacao-container {
+  background-color: grey;
+  height:200px ;
+  width:1300px ;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+
+}
+
+.who {
+  font-weight: 400;
+  font-size: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 20px;
+  color: #f0f0f0;
+}

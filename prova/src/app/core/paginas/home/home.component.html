@@ -1,0 +1,34 @@
+<div class="background">
+  <div class="">
+    <p class="texto">Quem somos?</p>
+    <p class="who apresentacao-container">
+      A missão do AutoFlix é ajudar na escolha do seu entretenimento, e é por
+      isso que levamos até você os melhores reviews sobre séries, documentários
+      e filmes.
+    </p>
+  </div>
+
+  <div class="">
+    <p class="texto">Nossos Filmes</p>
+    <div class="flex-container flex flex-wrap">
+      <a [routerLink]="['/filme/'+ filme.id]"  *ngFor="let filme of filmes">
+        <div class="card mb-3" style="width: 18rem">
+          <img
+            src="{{ filme.linkCapa }}"
+            class="card-img-top foto"
+            alt="Capa do Filme"
+          />
+          <div class="card-body tamanho">
+            <h5 class="card-title">{{ filme.titulo }}</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item texto2">
+                Avaliação da Crítica: {{ filme.avaliacaoDaCritica }}
+              </li>
+              <li class="list-group-item texto2">Gênero: {{ filme.genero }}</li>
+            </ul>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

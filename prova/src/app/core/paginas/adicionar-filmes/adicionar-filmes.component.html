@@ -1,0 +1,124 @@
+<main class="container">
+  <div class="my-5 topo">
+    <h1 class="titulo">Adicionar novo filme</h1>
+  </div>
+
+  <form class="row tela form-group d-flex" [formGroup]="filmeForm">
+    <div class="col-md-5">
+      <div
+        class="mb-4 p-4 box linha1 d-flex flex-column align-items-center justify-content-between"
+      >
+        <div class="imagem my-4 p-4">
+          <img
+            class="img-fluid"
+            [src]="filmeForm.value.linkCapa || '/assets/sem-imagem.png'"
+            alt="Imagem do filme"
+          />
+        </div>
+
+        <div class="w-100">
+          <label class="label-input mb-1">Link da Capa*</label>
+          <input
+            formControlName="linkCapa"
+            class="form-control"
+            placeholder="Insira a URL da imagem aqui"
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-7">
+      <div
+        class="mb-4 p-4 box linha1 d-flex flex-column justify-content-between"
+      >
+        <div class="w-100">
+          <label class="label-input mb-1">Nome do filme*</label>
+          <input
+            formControlName="titulo"
+            class="form-control"
+            placeholder="Digite o nome do filme aqui"
+            type="text"
+          />
+        </div>
+
+        <div class="w-100">
+          <label class="label-input mb-1">Sinopse do filme*</label>
+          <input
+            formControlName="sinopse"
+            class="form-control"
+            placeholder="Digite a sinopse do filme aqui"
+            type="text"
+          />
+        </div>
+
+        <div class="w-100">
+          <label class="label-input mb-1">Avaliação da Crítica*</label>
+          <input
+            formControlName="avaliacaoDaCritica"
+            class="form-control"
+            placeholder="Digite a Avaliação da Crítica aqui"
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="w-100 my-4 py-2">
+      <label class="label-input mb-1">Gênero do filme*</label>
+      <input
+        formControlName="genero"
+        class="form-control"
+        placeholder="Digite o genero do filme aqui"
+        type="text"
+      />
+    </div>
+
+    <div class="w-100 my-4 py-2">
+      <label class="label-input mb-1">Classificação indicativa*</label>
+      <input
+        formControlName="classificacaoIndicativa"
+        class="form-control"
+        placeholder="Digite a classificação indicativa aqui"
+        type="text"
+      />
+    </div>
+
+    <div class="w-100 my-4 py-2 mb-12">
+      <label class="label-input mb-1">Data de lançamento*</label>
+      <input
+        formControlName="dataDeLancamento"
+        class="form-control"
+        placeholder="Digite a data de lançamento aqui"
+        type="date"
+      />
+    </div>
+
+    <div class="w-100 my-4 py-2 mb-12">
+      <label class="label-input mb-1">Duração em Segundos*</label>
+      <input
+        formControlName="duracaoEmSegundo"
+        class="form-control"
+        placeholder="Digite a data de lançamento aqui"
+        type="text"
+      />
+    </div>
+
+    <div class="container d-flex">
+      <div class="col-md-7 offset-md-5">
+        <div class="mb-4">
+          <div class="w-100">
+            <button
+              (click)="botaoEnviar(); $event.preventDefault()"
+              [disabled]="filmeForm.invalid"
+              type="button"
+              class="w-100 btn btn-salvar"
+            >
+              Adicionar filme
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</main>
