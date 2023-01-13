@@ -1,0 +1,51 @@
+<main class="background">
+  <p class="fonte p-">Detalhes</p>
+  <div class="ajuste">
+    <div class="container-detalhes">
+      <img
+        class="card-foto"
+        [src]="filme?.linkCapa || '../../../../assets/sem-imagem.png'"
+        alt="Capa do Filme"
+      />
+      <div class="texto container-outros">
+        <p class="titulo">{{ filme?.titulo ?? "" }}</p>
+        <div class="detalhes">
+          <p>
+            Data de Lançamento:
+            {{ filme?.dataDeLancamento | date : "dd/MM/YYYY" }}
+          </p>
+          <p>Duração em Segundos: {{ filme?.duracaoEmSegundo ?? "" }}</p>
+          <p>Gênero: {{ filme?.genero ?? "" }}</p>
+          <p>
+            Classificação Indicativa: {{ filme?.classificacaoIndicativa ?? "" }}
+          </p>
+        </div>
+        <p>Sinopse:</p>
+        <p>{{ filme?.sinopse ?? "" }}</p>
+        <p>Avaliação da Crítica:</p>
+        <p>{{ filme?.avaliacaoDaCritica ?? "" }}</p>
+      </div>
+    </div>
+  </div>
+  <p class="fonte">Assista também</p>
+    <div class="flex-container d-flex flex-wrap card-outros">
+      <div *ngFor="let filmeRecomendacao of filmes">
+        <div *ngIf="filmeRecomendacao.id != filme.id" class= "card mb-3" style="width: 18rem">
+          <img
+            src="{{ filmeRecomendacao.linkCapa }}"
+            class="card-img-top foto"
+            alt="Capa do Filme"
+          />
+          <div class="card-body corpo">
+            <h5 class="card-title">{{ filmeRecomendacao.titulo }}</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item texto2">
+                Avaliação da Crítica: {{ filmeRecomendacao.avaliacaoDaCritica }}
+              </li>
+              <li class="list-group-item texto2">Gênero: {{ filmeRecomendacao.genero }}</li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </div>
+</main>
